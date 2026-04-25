@@ -10,8 +10,8 @@ impl Plugin for LePlugin {
     fn metadata(&self) -> PluginMetadata {
         PluginMetadata {
             name: "Auto Double Doors".into(),
-            version: env!("CARGO_PKG_VERSION").into(),
-            authors: vec!["Bjorn".into()],
+            version: "0.0.1".into(),
+            authors: vec!["ZBVirus".into()],
             description: "A plugin that automatically opens both double doors when one opens. It works when closing too! :D".into(),
             dependencies: vec![],
         }
