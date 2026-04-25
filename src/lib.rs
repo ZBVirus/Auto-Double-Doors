@@ -1,5 +1,6 @@
-use pumpkin_plugin_api::{Context, Plugin, PluginMetadata};
+use pumpkin_plugin_api::{Context, Plugin, PluginMetadata, events::EventPriority};
 use tracing::*;
+mod door_listener;
 
 struct LePlugin;
 impl Plugin for LePlugin {
@@ -18,6 +19,8 @@ impl Plugin for LePlugin {
     }
 
     fn on_load(&mut self, _context: Context) -> pumpkin_plugin_api::Result<()> {
+
+        _context.register_event_handler(door_listener::DoorOpenHandler, EventPriority::Normal, false)?;
         info!("Auto Double Doors plugin loaded!");
         Ok(())
     }
