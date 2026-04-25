@@ -3,4 +3,13 @@ name = "auto_double_door"
 version = "0.1.0"
 edition = "2024"
 
+[lib] 
+crate-type = ["cdylib"]
+
+[profile.release] 
+lto = true
+
 [dependencies]
+# This is the api crate that makes creating plugins easier, and has wit definitions
+pumpkin-plugin-api = { version = "0.1.0", git = "https://github.com/Pumpkin-MC/Pumpkin", package = "pumpkin-plugin-api" }
+tracing = "0.1.44"
